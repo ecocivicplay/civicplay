@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter",
+          "-webkit-mask",
+          "border: 1px solid color-mix(in srgb, var(--hiw-primary) 25%, transparent)",
+          "border-color: color-mix(in srgb, var(--hiw-primary) 40%, transparent)",
+          "border-color: color-mix(in srgb, var(--hiw-primary) 35%, transparent)",
+          "min-height: auto"
+        ]
+      }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
+      }
+    ]
+  }
+}

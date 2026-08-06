@@ -1,0 +1,13 @@
+.gallery { background: var(--card); }
+.gallery__masonry { columns: 4; column-gap: 18px; }
+.gal-item { position: relative; margin-bottom: 18px; border-radius: var(--r-md); overflow: hidden; break-inside: avoid; cursor: pointer; }
+.gal-item img { width: 100%; display: block; transition: transform 0.6s var(--ease); }
+.gal-item--tall img { min-height: 320px; object-fit: cover; }
+.gal-item:hover img { transform: scale(1.1); }
+.gal-item figcaption { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 18px; background: linear-gradient(0deg, rgba(11,17,32,0.75), transparent 60%); opacity: 0; transition: opacity 0.4s; }
+.gal-item:hover figcaption { opacity: 1; }
+.gal-item figcaption span { color: #fff; font-family: var(--font-head); font-weight: 600; transform: translateY(10px); transition: transform 0.4s; }
+.gal-item:hover figcaption span { transform: translateY(0); }
+@media (max-width: 1024px) { .gallery__masonry { columns: 3; } }
+@media (max-width: 700px) { .gallery__masonry { columns: 2; } }
+@media (max-width: 440px) { .gallery__masonry { columns: 1; } }

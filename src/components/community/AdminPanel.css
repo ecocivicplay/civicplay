@@ -1,0 +1,103 @@
+.adminPanel { max-width: 500px; }
+
+.adminPanel__tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.adminPanel__tabs button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+}
+.adminPanel__tabs button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.adminPanel__badge {
+  background: #e53e3e;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  padding: 1px 6px;
+}
+
+.adminPanel__content { display: flex; flex-direction: column; gap: 8px; max-height: 380px; overflow-y: auto; }
+.adminPanel__loading, .adminPanel__empty { text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 24px 0; }
+
+.adminPanel__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--r-sm);
+  background: var(--bg);
+}
+
+.adminPanel__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.adminPanel__name { flex: 1; font-size: 0.88rem; color: var(--text); display: flex; align-items: center; gap: 6px; }
+
+.adminPanel__roleTag {
+  font-size: 0.65rem;
+  background: rgba(0, 184, 148, 0.15);
+  color: var(--secondary);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.adminPanel__actions { display: flex; gap: 6px; }
+
+.adminPanel__approve, .adminPanel__reject {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.adminPanel__approve { background: var(--secondary); }
+.adminPanel__reject { background: #e53e3e; }
+
+.adminPanel__danger { padding: 8px 4px; }
+.adminPanel__danger p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 14px; line-height: 1.5; }
+
+.adminPanel__deleteBtn {
+  padding: 11px 16px;
+  border-radius: var(--r-sm);
+  background: #e53e3e;
+  color: #fff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adminPanel__confirmRow { display: flex; gap: 10px; }
+.adminPanel__cancelBtn {
+  padding: 11px 16px;
+  border-radius: var(--r-sm);
+  background: var(--border);
+  color: var(--text);
+  font-weight: 600;
+}

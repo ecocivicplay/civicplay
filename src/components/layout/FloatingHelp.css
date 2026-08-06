@@ -1,0 +1,198 @@
+.fhelp {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 900;
+}
+
+.fhelp__btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s;
+}
+
+.fhelp__btn:hover {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.fhelp__panel {
+    position: absolute;
+    bottom: 66px;
+    left: 0;
+    width: 320px;
+    max-width: calc(100vw - 48px);
+    height: 420px;
+    padding: 16px;
+    border-radius: var(--r-md);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fhelp__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.fhelp__badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.fhelp__head h4 {
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+}
+
+.fhelp__sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.fhelp__messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 4px;
+}
+
+.fhelp__msg {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 8px 12px;
+    border-radius: var(--r-sm);
+    max-width: 85%;
+    white-space: pre-wrap;
+}
+
+.fhelp__msg--assistant {
+    background: var(--bg);
+    color: var(--text);
+    align-self: flex-start;
+    border: 1px solid var(--border);
+}
+
+.fhelp__msg--user {
+    background: var(--grad-primary);
+    color: #fff;
+    align-self: flex-end;
+}
+
+.fhelp__typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.fhelp__typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    animation: fhelp-bounce 1.2s infinite ease-in-out;
+}
+
+.fhelp__typing span:nth-child(2) { animation-delay: 0.15s; }
+.fhelp__typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fhelp-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.fhelp__suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.fhelp__suggestions button {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+.fhelp__suggestions button:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.fhelp__form {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.fhelp__form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.fhelp__form input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+.fhelp__form button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.fhelp__form button:disabled {
+    opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+    .fhelp {
+        left: 18px;
+        bottom: 88px;
+    }
+    .fhelp__panel {
+        width: min(320px, calc(100vw - 36px));
+        height: min(420px, 60vh);
+    }
+}
+
+.fhelp--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s;
+}

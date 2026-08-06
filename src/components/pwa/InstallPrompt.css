@@ -1,0 +1,88 @@
+.install-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.install-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(17, 24, 39, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.install-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.install-card h2 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.install-card p {
+  color: #b8c1d1;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.install-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.install-buttons button {
+  flex: 1;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.later-btn {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+.later-btn:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.install-btn {
+  background: linear-gradient(135deg,#2563eb,#3b82f6);
+  color: white;
+  font-weight: 600;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59,130,246,.35);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

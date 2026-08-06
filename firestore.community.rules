@@ -1,0 +1,56 @@
+// Community Hub rules.
+// These are ONLY for the collections the browser talks to Firestore about
+// directly (chat messages + notifications). Every other community
+// collection (communities, communityMembers, communityRequests,
+// communityInvites) is written/read exclusively through the Express
+// backend using the Firebase Admin SDK, which is not subject to these
+// rules — so they're intentionally left locked down to client access below.
+//
+// IMPORTANT: paste the `match` blocks below into your existing
+// firestore.rules file (inside your existing `service cloud.firestore {
+// match /databases/{database}/documents { ... } }` block). Do not replace
+// your whole rules file with this snippet — it only covers the new
+// collections.
+
+function isSignedIn() {
+  return request.auth != null;
+}
+
+function isApprovedMember(communityId) {
+  return isSignedIn() &&
+    exists(/databases/$(database)/documents/communityMembers/$(communityId + '_' + request.auth.uid)) &&
+    get(/databases/$(database)/documents/communityMembers/$(communityId + '_' + request.auth.uid)).data.status == 'approved';
+}
+
+// Real-time chat messages. Only approved members of a community can read
+// or send messages in it. Messages are immutable once created (no edits,
+// no deletes) to keep moderation simple.
+match /communityMessages/{messageId} {
+  allow read: if isApprovedMember(resource.data.communityId);
+  allow create: if isSignedIn()
+    && isApprovedMember(request.resource.data.communityId)
+    && request.resource.data.senderId == request.auth.uid;
+  allow update, delete: if false;
+}
+
+// Notifications. A user can only ever read/modify their own.
+match /notifications/{notificationId} {
+  allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+  allow update: if isSignedIn() && resource.data.userId == request.auth.uid
+    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+  allow create, delete: if false; // only the backend (Admin SDK) creates these
+}
+
+// Everything else community-related stays server-only.
+match /communities/{communityId} {
+  allow read, write: if false;
+}
+match /communityMembers/{memberId} {
+  allow read, write: if false;
+}
+match /communityRequests/{requestId} {
+  allow read, write: if false;
+}
+match /communityInvites/{inviteId} {
+  allow read, write: if false;
+}

@@ -1,0 +1,255 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--nav-h);
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero__slide {
+    position: absolute;
+    inset: -20px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+    transform: scale(1);
+}
+
+.hero__slide--active {
+    opacity: 1;
+    animation: kenburns 8s ease-out forwards;
+}
+
+@keyframes kenburns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(11, 17, 32, 0.82) 0%, rgba(11, 17, 32, 0.55) 50%, rgba(30, 136, 229, 0.4) 100%);
+}
+
+.hero__particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    bottom: -10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.hero__gradient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 1;
+}
+
+.hero__gradient--1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 184, 148, 0.35);
+    top: -100px;
+    right: 10%;
+    transform: translate(var(--px, 0), var(--py, 0));
+}
+
+.hero__gradient--2 {
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 200, 87, 0.25);
+    bottom: -80px;
+    left: 5%;
+    transform: translate(calc(var(--px, 0) * -1), calc(var(--py, 0) * -1));
+}
+
+.hero__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero__left {
+    color: #fff;
+}
+
+.hero__badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.hero__sub {
+    font-size: 1.15rem;
+    max-width: 520px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 36px;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+}
+
+.hero__stats-row {
+    display: flex;
+    gap: 40px;
+}
+
+.hero__stats-row div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__stats-row strong {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+}
+
+.hero__stats-row span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__right {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    transform: translate(var(--px, 0), var(--py, 0));
+    transition: transform 0.2s ease-out;
+}
+
+.hero__card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px;
+    border-radius: var(--r-md);
+    color: #fff;
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero__card:nth-child(even) {
+    margin-top: 30px;
+}
+
+.hero__card-icon {
+    font-size: 2rem;
+}
+
+.hero__card strong {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+}
+
+.hero__card span {
+    font-size: 0.82rem;
+    opacity: 0.85;
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 44px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.hero__scroll span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 8px;
+    background: #fff;
+    border-radius: 4px;
+    animation: scrollDot 1.6s infinite;
+}
+
+@keyframes scrollDot {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 26px;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__right {
+        max-width: 460px;
+    }
+
+    .hero__stats-row {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__right {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__card:nth-child(even) {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,35 @@
+.back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    box-shadow: var(--shadow-glow);
+    z-index: 1100;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.4s var(--ease);
+}
+
+.back-top--show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.back-top:hover {
+    transform: translateY(-4px) scale(1.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .back-top {
+        bottom: 95px; /* 70px bottom nav + 25px gap */
+        right: 16px;
+    }
+}

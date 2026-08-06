@@ -1,0 +1,45 @@
+.mag-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 32px;
+  border-radius: var(--r-md);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), filter 0.25s;
+  will-change: transform;
+}
+.mag-btn__label { position: relative; z-index: 2; }
+
+.mag-btn--primary {
+  background: var(--grad-primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+.mag-btn--primary:hover { transform: translateY(-4px); filter: brightness(1.08); box-shadow: 0 18px 50px rgba(30,136,229,0.4); }
+
+.mag-btn--ghost {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.5);
+}
+.mag-btn--ghost:hover { transform: translateY(-4px); background: rgba(255,255,255,0.22); }
+
+.mag-btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+.mag-btn--outline:hover { background: var(--primary); color: #fff; transform: translateY(-4px); }
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleAnim 0.6s linear;
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes rippleAnim { to { transform: scale(2.5); opacity: 0; } }

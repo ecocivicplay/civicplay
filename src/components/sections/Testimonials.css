@@ -1,0 +1,10 @@
+.testimonials { overflow: hidden; }
+.testi__swiper { padding: 20px 0 60px !important; }
+.testi__slide { width: 440px !important; max-width: 90vw; }
+.testi-card { padding: 36px; border-radius: var(--r-lg); background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+.testi-card__quote { font-size: 1.1rem; line-height: 1.7; margin-bottom: 24px; color: var(--text); }
+.testi-card__author { display: flex; align-items: center; gap: 14px; }
+.testi-card__author img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+.testi-card__author strong { display: block; font-family: var(--font-head); }
+.testi-card__author span { color: var(--text-muted); font-size: 0.85rem; }
+.testimonials .swiper-pagination-bullet-active { background: var(--primary); }

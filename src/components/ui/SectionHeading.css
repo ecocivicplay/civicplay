@@ -1,0 +1,10 @@
+.sec-head { margin-bottom: 64px; max-width: 720px; }
+.sec-head--center { margin-inline: auto; text-align: center; }
+.sec-head__eyebrow {
+  display: inline-block; padding: 7px 16px; border-radius: 100px;
+  background: rgba(30,136,229,0.1); color: var(--primary);
+  font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em;
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.sec-head__title { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 18px; }
+.sec-head__sub { color: var(--text-muted); font-size: 1.1rem; }

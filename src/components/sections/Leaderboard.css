@@ -1,0 +1,146 @@
+.leaderboard {
+    background: var(--card);
+}
+
+.lb__podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.podium {
+    text-align: center;
+    flex: 1;
+    max-width: 220px;
+}
+
+.podium img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--card);
+    box-shadow: var(--shadow-md);
+    margin: 0 auto 12px;
+}
+
+.podium--1 img {
+    width: 100px;
+    height: 100px;
+    border-color: var(--accent);
+}
+
+.podium h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.podium__pts {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.podium__stand {
+    margin-top: 16px;
+    border-radius: var(--r-md) var(--r-md) 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 18px;
+    color: #fff;
+}
+
+.podium--1 .podium__stand {
+    height: 150px;
+    background: linear-gradient(180deg, var(--accent), #e0a93a);
+}
+
+.podium--2 .podium__stand {
+    height: 110px;
+    background: linear-gradient(180deg, #b0bec5, #90a4ae);
+}
+
+.podium--3 .podium__stand {
+    height: 85px;
+    background: linear-gradient(180deg, #cd8e5a, #b57544);
+}
+
+.podium__medal {
+    font-size: 1.8rem;
+}
+
+.podium__rank {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.lb__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lb-row:hover {
+  transform: translateY(-3px);
+}
+
+.lb-row img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lb-row__rank {
+  width: 45px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.lb-row__name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.lb-row__pts {
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+    .podium img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .podium--1 img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .podium h4 {
+        font-size: 0.85rem;
+    }
+}
+
+.lb-row--me {
+  background: linear-gradient(90deg, #2563eb20, #60a5fa20);
+  border: 2px solid #2563eb;
+  border-radius: 12px;
+  font-weight: 600;
+}

@@ -1,0 +1,171 @@
+.rewards__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.reward-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 32px 26px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.reward-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.reward-card__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: inline-block;
+    transition: transform 0.5s var(--ease);
+}
+
+.reward-card:hover .reward-card__icon {
+    transform: scale(1.2) rotate(-6deg);
+}
+
+.reward-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.reward-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.reward-card__cost {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: rgba(255, 200, 87, 0.18);
+    color: #b8860b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.reward-card__btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    font-family: var(--font-head);
+    transition: all 0.3s;
+}
+
+.reward-card__btn:hover {
+    background: var(--grad-primary);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   New Rewards Layout
+================================= */
+
+.reward-tier {
+  margin-top: 70px;
+}
+
+.reward-tier:first-of-type {
+  margin-top: 40px;
+}
+
+.reward-tier-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text);
+  position: relative;
+  padding-left: 18px;
+}
+
+.reward-tier-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 34px;
+  border-radius: 20px;
+  background: var(--primary);
+}
+
+.reward-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.reward-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reward-tier-badge {
+  align-self: flex-start;
+  background: rgba(37,99,235,.12);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.reward-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 600;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.reward-card {
+  padding: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.reward-card h3{
+  margin:0;
+}
+
+.reward-card p{
+  margin:0;
+  line-height:1.6;
+}
+
+.reward-card__btn{
+  margin-top:12px;
+}
+
+@media (max-width:768px){
+
+  .reward-tier-title{
+      font-size:1.5rem;
+  }
+
+  .reward-image{
+      height:160px;
+  }
+
+}

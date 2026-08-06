@@ -1,0 +1,52 @@
+:root {
+  /* Colors */
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --primary: #1e88e5;
+  --primary-dark: #1565c0;
+  --secondary: #00b894;
+  --accent: #ffc857;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e5e7eb;
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #1e88e5 0%, #00b894 100%);
+  --grad-accent: linear-gradient(135deg, #ffc857 0%, #1e88e5 100%);
+  --grad-hero: linear-gradient(120deg, #1e88e5, #00b894, #ffc857);
+  --grad-glass: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(30, 41, 59, 0.06);
+  --shadow-md: 0 8px 30px rgba(30, 41, 59, 0.08);
+  --shadow-lg: 0 20px 60px rgba(30, 41, 59, 0.12);
+  --shadow-glow: 0 10px 40px rgba(30, 136, 229, 0.28);
+
+  /* Radius */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+
+  /* Layout */
+  --max-w: 1240px;
+  --nav-h: 76px;
+
+  /* Fonts */
+  --font-head: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --bg: #0b1120;
+  --card: #131c2e;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --grad-glass: linear-gradient(135deg, rgba(30,41,59,0.6), rgba(30,41,59,0.3));
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+}

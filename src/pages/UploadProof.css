@@ -1,0 +1,22 @@
+.upload-proof-page {
+  min-height: 100vh;
+  background: var(--background);
+  padding: 30px 20px 100px;
+}
+
+.upload-proof-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.upload-proof-container h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.upload-proof-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}

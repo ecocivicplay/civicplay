@@ -1,0 +1,34 @@
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.marquee__track {
+    display: flex;
+    gap: 64px;
+    width: max-content;
+    animation: scrollX linear infinite;
+}
+
+.marquee__item {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    white-space: nowrap;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.marquee__item:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+@keyframes scrollX {
+    to {
+        transform: translateX(-50%);
+    }
+}

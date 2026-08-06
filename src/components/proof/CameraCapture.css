@@ -1,0 +1,226 @@
+.camera-fullscreen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.camera-feed,
+.camera-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.camera-loading,
+.camera-error {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #000;
+    z-index: 5;
+}
+
+.camera-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.camera-mode {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, .12);
+    border-radius: 30px;
+}
+
+.camera-mode button {
+    background: transparent;
+    color: rgba(255, 255, 255, .75);
+    border: none;
+    padding: 8px 22px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.camera-mode button.active {
+    background: #fff;
+    color: #000;
+}
+
+.camera-controls-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.camera-controls-spacer {
+    width: 54px;
+    height: 54px;
+}
+
+.camera-gallery-btn {
+    width: 54px;
+    height: 54px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .15);
+    color: #fff;
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.camera-gallery-btn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, .25);
+}
+
+.camera-shutter {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.camera-shutter span {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.camera-shutter.recording span {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: red;
+}
+
+.camera-preview-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+}
+
+.camera-preview-actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.retake-btn,
+.continue-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.retake-btn {
+    background: #fff;
+    color: #000;
+}
+
+.continue-btn {
+    background: #16a34a;
+    color: #fff;
+}
+
+.camera-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 100;
+    transition: .2s;
+}
+
+.camera-close:hover {
+    background: rgba(0, 0, 0, .65);
+    transform: scale(1.05);
+}
+
+.camera-flip {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #fff;
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 100;
+    transition: .2s;
+}
+
+.camera-flip:hover {
+    transform: scale(1.1);
+}

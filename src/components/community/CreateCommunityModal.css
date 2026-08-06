@@ -1,0 +1,80 @@
+
+
+.ccModal__header h2 { font-size: 1.3rem; color: var(--text); }
+
+
+.ccModal__close:hover { background: var(--border); }
+
+.ccModal__form { display: flex; flex-direction: column; gap: 16px; }
+
+.ccModal__imageUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 130px;
+  border-radius: var(--r-md);
+  border: 1.5px dashed var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 0.82rem;
+  transition: border-color 0.2s var(--ease);
+}
+.ccModal__imageUpload:hover { border-color: var(--primary); }
+.ccModal__imageUpload img { width: 100%; height: 100%; object-fit: cover; }
+
+.ccModal__field { display: flex; flex-direction: column; gap: 6px; }
+.ccModal__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.ccModal__field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.ccModal__field input,
+.ccModal__field select,
+.ccModal__field textarea {
+  padding: 11px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: none;
+}
+.ccModal__field input:focus,
+.ccModal__field select:focus,
+.ccModal__field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.ccModal__error {
+  color: #e53e3e;
+  font-size: 0.85rem;
+}
+
+.ccModal__submit {
+  padding: 13px;
+  border-radius: var(--r-sm);
+  background: var(--grad-primary);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s var(--ease);
+}
+.ccModal__submit:hover { opacity: 0.92; }
+.ccModal__submit:disabled { opacity: 0.7; cursor: default; }
+
+.spin { animation: spin 0.9s linear infinite; }
+
+@media (max-width: 480px) {
+  .ccModal__row { grid-template-columns: 1fr; }
+}

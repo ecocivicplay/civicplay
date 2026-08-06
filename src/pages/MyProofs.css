@@ -1,0 +1,141 @@
+.my-proofs-page {
+  min-height: 100vh;
+  padding: 50px 30px;
+  background: linear-gradient(
+    135deg,
+    #071b18,
+    #102f29,
+    #153d37
+  );
+  color: white;
+}
+
+.my-proofs-page h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+
+.proof-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.stat-card {
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(15px);
+  border-radius:22px;
+  padding:25px;
+  text-align:center;
+}
+
+
+.stat-card h2 {
+  font-size:36px;
+  margin:0;
+}
+
+
+.stat-card span {
+  color:#cfcfcf;
+}
+
+
+
+.proof-filters {
+
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:40px 0;
+  flex-wrap:wrap;
+
+}
+
+
+.proof-filters button {
+
+  padding:12px 25px;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:rgba(255,255,255,.1);
+  color:white;
+  font-weight:600;
+  transition:.3s;
+
+}
+
+
+.proof-filters button:hover {
+
+  background:#16a34a;
+  transform:translateY(-3px);
+
+}
+
+
+
+.proof-grid {
+
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:30px;
+
+}
+
+
+
+.empty-proof {
+
+  text-align:center;
+  padding:80px 20px;
+  font-size:22px;
+  color:#ccc;
+
+}
+
+
+
+.proof-loading {
+
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:24px;
+
+}
+
+
+
+@media(max-width:768px){
+
+  .my-proofs-page{
+    padding:30px 15px;
+  }
+
+
+  .my-proofs-page h1{
+    font-size:32px;
+  }
+
+
+  .proof-stats{
+    grid-template-columns:1fr;
+  }
+
+}

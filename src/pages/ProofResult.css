@@ -1,0 +1,133 @@
+.proof-result-page {
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.proof-result-card {
+    width: 100%;
+    max-width: 620px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: 40px;
+    text-align: center;
+    color: var(--text);
+    box-shadow: var(--shadow-lg);
+}
+
+.proof-icon {
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+.proof-result-card h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-family: var(--font-head);
+}
+
+.proof-message {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+.reward-box {
+    background: rgba(0, 184, 148, 0.12);
+    border: 1px solid rgba(0, 184, 148, 0.35);
+    border-radius: var(--r-md);
+    padding: 24px;
+    margin-bottom: 28px;
+}
+
+.reward-box h2 {
+    margin-bottom: 18px;
+    color: var(--secondary);
+}
+
+
+.reward-item {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: var(--text);
+}
+
+
+.details {
+    text-align: left;
+    background: var(--grad-glass);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 22px;
+    margin-bottom: 30px;
+}
+
+
+.details p {
+    margin: 12px 0;
+    color: var(--text);
+}
+
+
+.proof-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.proof-buttons button {
+
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .25s;
+
+    background: var(--grad-primary);
+    color: white;
+
+}
+
+
+.proof-buttons button:hover {
+
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+
+}
+
+
+@media(max-width:650px) {
+
+    .proof-result-card {
+        padding: 28px;
+    }
+
+    .proof-result-card h1 {
+        font-size: 28px;
+    }
+
+    .reward-item {
+        font-size: 18px;
+    }
+
+    .proof-buttons {
+        flex-direction: column;
+    }
+
+    .proof-buttons button {
+        width: 100%;
+    }
+
+}
