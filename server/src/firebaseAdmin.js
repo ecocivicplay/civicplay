@@ -1,19 +1,21 @@
-import { initializeApp, cert } from 'firebase-admin/app';
-import { getFirestore } from 'firebase-admin/firestore';
-import { getStorage } from 'firebase-admin/storage';
-import { getAuth } from 'firebase-admin/auth';
-import { readFileSync } from 'fs';
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
+import { getStorage } from "firebase-admin/storage";
+import { getAuth } from "firebase-admin/auth";
 
-const serviceAccount = JSON.parse(
-  readFileSync(new URL('../serviceAccountKey.json', import.meta.url))
-);
+const serviceAccount = {
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+};
 
 const app = initializeApp({
   credential: cert(serviceAccount),
-  storageBucket: 'eco-civivplay-2.firebasestorage.app',
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 });
 
 export const db = getFirestore(app);
 export const bucket = getStorage(app).bucket();
 export const authAdmin = getAuth(app);
+
 export default app;
