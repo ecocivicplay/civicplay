@@ -65,7 +65,7 @@ export default function UploadProof() {
         setStatus("Saving video proof...");
 
         const response = await fetch(
-          "http://localhost:5000/api/proofs/save",
+          `${import.meta.env.VITE_API_URL}/api/proofs/save`,
           {
             method: "POST",
             headers: {
@@ -108,7 +108,7 @@ export default function UploadProof() {
 
 
       const response = await fetch(
-        "http://localhost:5000/api/proofs/verify",
+        `${import.meta.env.VITE_API_URL}/api/proofs/verify`,
         {
           method: "POST",
           headers: {

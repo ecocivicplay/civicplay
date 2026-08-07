@@ -12,7 +12,7 @@ import proofsRouter from './routes/proofs.js';
 
 const app = express();
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN?.split(',')
+ origin: process.env.CLIENT_ORIGIN?.split(',').map(o => o.trim())
 }));
 app.use(express.json());
 
