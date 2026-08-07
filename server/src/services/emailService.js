@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer";
 
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -8,25 +11,23 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+transporter.verify((err, success) => {
+  if (err) {
+    console.error("SMTP ERROR:", err);
+  } else {
+    console.log("SMTP Ready");
+  }
+});
+
 export async function sendOTP(email, otp) {
-  await transporter.sendMail({
+  console.log("Sending OTP to:", email);
+
+  const info = await transporter.sendMail({
     from: `"CivicPlay" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: "CivicPlay Email Verification",
-    html: `
-      <div style="font-family:Arial,sans-serif;padding:20px">
-        <h2>CivicPlay Email Verification</h2>
-
-        <p>Your OTP is:</p>
-
-        <h1 style="letter-spacing:5px;color:#2563eb">
-          ${otp}
-        </h1>
-
-        <p>This OTP will expire in <b>5 minutes</b>.</p>
-
-        <p>If you didn't request this, ignore this email.</p>
-      </div>
-    `,
+    html: `<h2>Your OTP is ${otp}</h2>`,
   });
+
+  console.log("Mail sent:", info.messageId);
 }
